@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Change to present directory or fail
+cd "${0%/*}" || exit 1
+
+# Make script executable
+chmod +x helloworld
+
+# Copy script to install location
+mv helloworld /usr/local/bin/

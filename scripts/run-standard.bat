@@ -1,0 +1,1 @@
+docker run -v %CD%:/home/si-user --interactive --tty --rm super-image:dev

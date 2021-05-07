@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run -v "$(pwd)":/home/si-user --interactive --tty --rm super-image:dev

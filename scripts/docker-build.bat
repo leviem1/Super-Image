@@ -1,0 +1,1 @@
+docker build --tag super-image:dev .

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Array of locations to package installers from project root
+# ADD PACKAGE INSTALL SCRIPTS HERE
+installers=(
+    packages/example/install # Example package
+)
+
+echo "########################
+ Welcome to Super Image
+########################"
+
+LAST_DIR=$(pwd)
+
+for installer in "${installers[@]}"; do
+    # Set installer permissions
+    chmod +x "$installer"
+
+    # Print location of installer
+    echo "Running $installer"
+
+    # Execute installer
+    eval "$installer"
+
+    # Change back to previous working directory or fail
+    cd "$LAST_DIR" || exit 1
+done
