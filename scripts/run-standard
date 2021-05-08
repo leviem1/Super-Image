@@ -1,3 +1,11 @@
 #!/bin/bash
 
-docker run -v "$(pwd)":/home/si-user --interactive --tty --rm super-image:dev
+FLAGS="--tty --rm"
+
+if [ $# -eq 0 ] ; then
+  FLAGS+=" --interactive"
+fi
+
+# shellcheck disable=SC2086
+# shellcheck disable=SC2048
+docker run -v "$(pwd)":/home/si-user $FLAGS super-image:dev $*

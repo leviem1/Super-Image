@@ -3,9 +3,14 @@ The super image is a template Docker project that can be used to quickly build a
 image comprised of various modular utilities with unique install processes.
 
 ## Usage
-To run the standard configuration, use the follow script:
+To run an interactive session in the container, use the follow script:
 ```bash
 scripts/run-standard
+```
+
+Or if you want to run a specific utility, you can use the following syntax:
+```bash
+scripts/run-standard [command] [args...]
 ```
 
 If a utility requires a more specialized run script, it should be present in the
