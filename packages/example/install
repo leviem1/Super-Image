@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit on error
+set -e
+
 # Change to present directory or fail
 cd "${0%/*}" || exit 1
 

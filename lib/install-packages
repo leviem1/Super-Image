@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit on error
+set -e
+
 # Array of locations to package installers from project root
 # ADD PACKAGE INSTALL SCRIPTS HERE
 installers=(
