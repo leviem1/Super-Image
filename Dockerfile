@@ -12,10 +12,10 @@ RUN echo '%wheel  ALL=(ALL)       NOPASSWD: ALL' > /etc/sudoers.d/50-wheel-nopas
 && echo '%sudo  ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers.d/50-wheel-nopasswd
 
 # Create temporary folder to copy packages to
-RUN mkdir /tmp/super-linter-packages
+RUN mkdir /tmp/super-image-packages
 
 # Change to package folder
-WORKDIR /tmp/super-linter-packages
+WORKDIR /tmp/super-image-packages
 
 # Copy installer to package folder
 COPY lib/install-packages .
@@ -33,7 +33,7 @@ RUN chmod +x install-packages && ./install-packages
 WORKDIR /home/si-user
 
 # Clean up repo folder
-RUN rm -rf /tmp/super-linter-repo
+RUN rm -rf /tmp/super-image-packages
 
 # Change to regular user
 USER si-user
